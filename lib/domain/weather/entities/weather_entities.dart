@@ -43,7 +43,6 @@ class WeatherProps with _$WeatherProps {
     @JsonKey(name: 'main') String? main,
     @JsonKey(name: 'description') String? description,
     @JsonKey(name: 'icon') String? icon,
-    // @JsonKey(name: 'icon') validateIconUrlString icon,
   }) = _WeatherProps;
 
   factory WeatherProps.fromJson(Map<String, Object?> json) => _$WeatherPropsFromJson(json);

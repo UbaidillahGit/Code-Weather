@@ -8,6 +8,5 @@ final getIt = GetIt.instance;
 
 @injectableInit
 void initInjection(String env) {
-  log('initInjection fired');
   $initGetIt(getIt, environment: env);
 }

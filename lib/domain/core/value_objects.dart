@@ -1,7 +1,3 @@
-// class IconStringToUrl extends String{
-  
-// }
-
 import 'package:code_weather/domain/core/failures.dart';
 import 'package:flutter/material.dart';
 import 'package:fpdart/fpdart.dart';

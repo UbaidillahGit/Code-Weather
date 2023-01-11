@@ -406,6 +406,8 @@ abstract class ReqForecast4Days implements DashboardEvent {
 /// @nodoc
 mixin _$DashboardState {
   WeatherEntities? get weatherEntities => throw _privateConstructorUsedError;
+  HoulyForecaseEntities? get houlyForecaseEntities =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DashboardStateCopyWith<DashboardState> get copyWith =>
@@ -418,9 +420,12 @@ abstract class $DashboardStateCopyWith<$Res> {
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res, DashboardState>;
   @useResult
-  $Res call({WeatherEntities? weatherEntities});
+  $Res call(
+      {WeatherEntities? weatherEntities,
+      HoulyForecaseEntities? houlyForecaseEntities});
 
   $WeatherEntitiesCopyWith<$Res>? get weatherEntities;
+  $HoulyForecaseEntitiesCopyWith<$Res>? get houlyForecaseEntities;
 }
 
 /// @nodoc
@@ -437,12 +442,17 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
   @override
   $Res call({
     Object? weatherEntities = freezed,
+    Object? houlyForecaseEntities = freezed,
   }) {
     return _then(_value.copyWith(
       weatherEntities: freezed == weatherEntities
           ? _value.weatherEntities
           : weatherEntities // ignore: cast_nullable_to_non_nullable
               as WeatherEntities?,
+      houlyForecaseEntities: freezed == houlyForecaseEntities
+          ? _value.houlyForecaseEntities
+          : houlyForecaseEntities // ignore: cast_nullable_to_non_nullable
+              as HoulyForecaseEntities?,
     ) as $Val);
   }
 
@@ -457,6 +467,19 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
       return _then(_value.copyWith(weatherEntities: value) as $Val);
     });
   }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HoulyForecaseEntitiesCopyWith<$Res>? get houlyForecaseEntities {
+    if (_value.houlyForecaseEntities == null) {
+      return null;
+    }
+
+    return $HoulyForecaseEntitiesCopyWith<$Res>(_value.houlyForecaseEntities!,
+        (value) {
+      return _then(_value.copyWith(houlyForecaseEntities: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
@@ -467,10 +490,14 @@ abstract class _$$_DashboardStateCopyWith<$Res>
       __$$_DashboardStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({WeatherEntities? weatherEntities});
+  $Res call(
+      {WeatherEntities? weatherEntities,
+      HoulyForecaseEntities? houlyForecaseEntities});
 
   @override
   $WeatherEntitiesCopyWith<$Res>? get weatherEntities;
+  @override
+  $HoulyForecaseEntitiesCopyWith<$Res>? get houlyForecaseEntities;
 }
 
 /// @nodoc
@@ -485,12 +512,17 @@ class __$$_DashboardStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? weatherEntities = freezed,
+    Object? houlyForecaseEntities = freezed,
   }) {
     return _then(_$_DashboardState(
       weatherEntities: freezed == weatherEntities
           ? _value.weatherEntities
           : weatherEntities // ignore: cast_nullable_to_non_nullable
               as WeatherEntities?,
+      houlyForecaseEntities: freezed == houlyForecaseEntities
+          ? _value.houlyForecaseEntities
+          : houlyForecaseEntities // ignore: cast_nullable_to_non_nullable
+              as HoulyForecaseEntities?,
     ));
   }
 }
@@ -498,14 +530,17 @@ class __$$_DashboardStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_DashboardState implements _DashboardState {
-  const _$_DashboardState({required this.weatherEntities});
+  const _$_DashboardState(
+      {required this.weatherEntities, required this.houlyForecaseEntities});
 
   @override
   final WeatherEntities? weatherEntities;
+  @override
+  final HoulyForecaseEntities? houlyForecaseEntities;
 
   @override
   String toString() {
-    return 'DashboardState(weatherEntities: $weatherEntities)';
+    return 'DashboardState(weatherEntities: $weatherEntities, houlyForecaseEntities: $houlyForecaseEntities)';
   }
 
   @override
@@ -514,11 +549,14 @@ class _$_DashboardState implements _DashboardState {
         (other.runtimeType == runtimeType &&
             other is _$_DashboardState &&
             (identical(other.weatherEntities, weatherEntities) ||
-                other.weatherEntities == weatherEntities));
+                other.weatherEntities == weatherEntities) &&
+            (identical(other.houlyForecaseEntities, houlyForecaseEntities) ||
+                other.houlyForecaseEntities == houlyForecaseEntities));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, weatherEntities);
+  int get hashCode =>
+      Object.hash(runtimeType, weatherEntities, houlyForecaseEntities);
 
   @JsonKey(ignore: true)
   @override
@@ -529,10 +567,14 @@ class _$_DashboardState implements _DashboardState {
 
 abstract class _DashboardState implements DashboardState {
   const factory _DashboardState(
-      {required final WeatherEntities? weatherEntities}) = _$_DashboardState;
+          {required final WeatherEntities? weatherEntities,
+          required final HoulyForecaseEntities? houlyForecaseEntities}) =
+      _$_DashboardState;
 
   @override
   WeatherEntities? get weatherEntities;
+  @override
+  HoulyForecaseEntities? get houlyForecaseEntities;
   @override
   @JsonKey(ignore: true)
   _$$_DashboardStateCopyWith<_$_DashboardState> get copyWith =>

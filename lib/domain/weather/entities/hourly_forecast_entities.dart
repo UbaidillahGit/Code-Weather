@@ -1,6 +1,3 @@
-
-// import 'dart:ffi';
-
 import 'package:code_weather/domain/weather/entities/weather_entities.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

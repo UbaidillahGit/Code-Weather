@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:code_weather/domain/location/location_abstract.dart';
 import 'package:code_weather/domain/weather/abstract/weather_repo.dart';
+import 'package:code_weather/domain/weather/entities/hourly_forecast_entities.dart';
 import 'package:code_weather/domain/weather/entities/weather_entities.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -27,13 +26,13 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
 
   void getCurrentWeather(ReqCurrentWeather event, Emitter<DashboardState> emit) async {
     final position = await locationRepository.getPosition();
-    // log('getCurrentWeather ${position}');
-    final res = await weatherRepository.getWeather(
+    
+    final resWeather = await weatherRepository.getWeather(
       lat: position.latitude,
       lon: position.longitude
     );
     
-    res.fold(
+    resWeather.fold(
       (l) => {},
       (r) {
         emit(
@@ -51,6 +50,9 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
       lat: position.latitude,
       lon: position.longitude
     );
-    log('getHourlyForecast $res');
+    res.fold(
+      (l) => {},
+      (r) => {},
+    );
   }
 }
